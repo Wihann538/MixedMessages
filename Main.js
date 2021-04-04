@@ -1,4 +1,4 @@
-const phrases = {
+const inputPhrases = {
     Name: ['Wihann', 'Maaijke', 'Ane', 'Christiaan'],
     Verb: ['swims', 'jogs', 'sleeps', 'rows'],
     Place: ['in the dam', 'in the park', 'in the bedroom', 'on the ocean']
@@ -10,9 +10,15 @@ const getPhrase = arr => {
   return arr[rand];
 };
 
-const generateSentence = () => {
+const generateSentence = phrases => {
+    const outputArr = [];
+    outputArr.push(getPhrase(phrases.Name));
+    outputArr.push(getPhrase(phrases.Verb));
+    outputArr.push(getPhrase(phrases.Place));
     
+    return outputArr.join(' ');
 }
 
 
-console.log(getPhrase(phrases.Name));
+//console.log(getPhrase(phrases.Name));
+console.log(generateSentence(inputPhrases));
